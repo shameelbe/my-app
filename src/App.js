@@ -1,7 +1,12 @@
+import Content from "./components/content";
+import Navbar from "./components/navbar";
+import css from "./App.css"
+
 function App() {
   return (
     <div>
-        Hello World
+        <Navbar></Navbar>
+        <Content></Content>
     </div>
   );
 }
