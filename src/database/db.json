@@ -23,6 +23,30 @@
       "lastName": "Seagle",
       "course": "Python",
       "id": 4
+    },
+    {
+      "firstName": "Seth",
+      "lastName": "Szymanski",
+      "course": "Python",
+      "id": 5
+    },
+    {
+      "firstName": "Dave",
+      "lastName": "Rocker",
+      "course": "Python",
+      "id": 6
+    },
+    {
+      "firstName": "John",
+      "lastName": "Hastings",
+      "course": "Python",
+      "id": 7
+    },
+    {
+      "firstName": "Kayla",
+      "lastName": "Mccauson",
+      "course": "Python",
+      "id": 8
     }
   ]
 }

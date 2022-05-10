@@ -1,51 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StudentList from "./studentList";
+import useGetRequest from "./useGetRequest";
 
 const Content = () => {
-    const [students, setStudents] = useState(        
-        [
-        {
-            "id" : 1,
-            "Header": "Musk Bought Tesla",
-            "lastName": "Abdul",
-            "course": "MERN"
-        },
-        {
-            "id" : 2,
-            "firstName": "Jack",
-            "lastName": "Sparrow",
-            "course": "Python"
-        },
-        {
-            "id" : 3,
-            "firstName": "Ricky",
-            "lastName": "Ponting",
-            "course": "MERN"
-        },
-        {
-            "id" : 4,
-            "firstName": "Watson",
-            "lastName": "Daniel",
-            "course": "PYTHON"
-        },
-        {
-            "id" : 5,
-            "firstName": "Kayla",
-            "lastName": "Mccausson",
-            "course": "MERN"
-        }
-    ]);
-
     const [searchText, setSearchText] = useState("");
 
     const deleteHandler = (id) => {
         const list = students.filter(student => student.id != id);
-        setStudents(list);
+        // setStudents(list);
     };
+
+    const {data: students, isLoading, erroMessage} = useGetRequest('http://localhost:7000/students');
 
     return (
         <div>
-            <StudentList students={students} header="All Students" deleteHandler={deleteHandler}></StudentList>
+            {isLoading && <div>Loading... Please wait</div>}
+            {erroMessage && <div style={{"color" : "red"}}>{erroMessage}</div>}
+            {students.length > 0 && <StudentList students={students} header="All Students" deleteHandler={deleteHandler}></StudentList>}
             <br/>
             <label>Search : </label>
             <input
