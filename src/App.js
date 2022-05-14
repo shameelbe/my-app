@@ -7,6 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import StudentDetails from "./components/studentDetails";
+import CreateStudent from "./components/StudentCreate";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
     <div>
         <Navbar></Navbar>
         <Routes>
-          <Route path="/create" element={<div><h1>Create New Student</h1></div>}></Route>
+          <Route path="/create" element={<CreateStudent></CreateStudent>}></Route>
           <Route path="/list" element={<Content></Content>}></Route>
           <Route path="/" element={<div><h1>Welcome Page. Please Select list to view student or click create new to create students</h1></div>}></Route>
           <Route path="/students/:id" element = {<StudentDetails></StudentDetails>}></Route>
