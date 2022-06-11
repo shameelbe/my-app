@@ -6,7 +6,7 @@ const StudentList = ({students, header, deleteHandler}) => {
             <h2 style={{"padding": "20px"}}>{header}</h2>
             {students.map(student => (
                 <div key={student.id} className="student-preview">
-                    <Link to={`/students/${student.id}`}>
+                    <Link to={`/students/${student._id}`}>
                          <h2>{student.firstName} {student.lastName}</h2>
                     </Link>
                 </div>
